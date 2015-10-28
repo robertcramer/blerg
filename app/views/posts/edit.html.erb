@@ -1,6 +1,6 @@
 <h1>Edit Post</h1>
 
-<%= form_tag(posts_path) do %>
+<%= form_tag(post_path(@post), method: :put) do %>
     <div class="post-field">
       <%= label_tag "Title: " %>
       <%= text_field_tag :title, @post.title %>
@@ -8,10 +8,10 @@
 
     <div class="post-field">
       <%= label_tag "Body: " %>
-      <%= text_area_tag :content, @post.title %>
+      <%= text_area_tag :content, @post.content %>
     </div>
 
     <%= submit_tag "Publish!" %>
 <% end %>
 
-<%= link_to "Neverdamnmind", :back %>
+<%= link_to "Back", :back %>
