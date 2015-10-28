@@ -26,11 +26,11 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:id])
-    @post.update(title: params[:title],
+    post = Post.find(params[:id])
+    post.update(title: params[:title],
                  content: params[:content],
                  updated_at: DateTime.now)
-    render :show
+    redirect_to post_path(post)
   end
 
 end
